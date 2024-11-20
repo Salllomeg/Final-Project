@@ -38,11 +38,6 @@ function toggleView(view) {
     }
 }
 
-document.getElementById('menuToggle').addEventListener('click', function() {
-    const menuIcons = document.querySelector('.menu-icons');
-    menuIcons.classList.toggle('active');
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.view-toggle-grid').addEventListener('click', () => {
         toggleView('grid');
@@ -54,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleView(currentView);
 });
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+    const menuIcons = document.querySelector('.menu-icons');
+    menuIcons.classList.toggle('active');
+});
+
+
 
 function toggleFavorite(productId) {
     const index = favorites.indexOf(productId);
