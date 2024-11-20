@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>SG - E-commerce</title>
+    <link rel="stylesheet" href="./assets/style/style.css" />
+</head>
+<body>
+    <header>
+        <div class="header_container container">
+            <div class="logo">
+                <img src="assets/icons/h01 - logobrand.png" alt="Brand Logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search" class="search-input" aria-label="Search">
+                <select id="categorySelect" class="search-select" aria-label="Select category">
+                    <option value="all">All Categories</option>
+                </select>
+                <button onclick="searchProducts()" class="search-btn">Search</button>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <div class="menu-icons">
+                <ul>
+                    <li><a href="#"><img src="./assets/icons/h02 - profile.svg" alt="Profile Icon">Profile</a></li>
+                    <li><a href="#"><img src="./assets/icons/h03 - msg.svg" alt="Messages Icon">Message</a></li>
+                    <li><a href="#"><img src="./assets/icons/h04 - heart.svg" alt="Wishlist Icon">Orders</a></li>
+                    <li><a href="#"><img src="./assets/icons/h05 - cart.svg" alt="Cart Icon">My cart</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="filter-container">
+            <span id="totalItems"><span class="chosen-category"></span></span>
+            <label class="checkbox-container">
+                <input type="checkbox" id="verifiedCheckbox">
+                <span class="checkmark"></span>
+                <span class="checkbox-text">Verified Only</span>
+            </label>
+            <select id="filterOptions" class="filterOptions" aria-label="Sort Options">
+                <option value="featured">Featured</option>
+                <option value="price">Sort by Price</option>
+                <option value="name">Sort by Name</option>
+            </select>
+            <button id="gridView" class="view-toggle-grid"><img src="./assets/icons/m01 - grid view.svg" alt="Grid View"></button>
+            <button id="listView" class="view-toggle-list"><img src="./assets/icons/m02 - list view.svg" alt="List View"></button>
+        </div>
+        <div id="productContainer" class="product-Container">
+        </div>
+        <div id="paginationContainer" class="pagination">
+            <div class="perPage">
+                <select id="itemPerPageSelect" class="page-select" aria-label="Select pages">
+                    <option value="10">show 10</option>
+                </select>
+            </div>
+            <div class="pag-btn container">
+                <button id="prevButton" class="pagination-button" disabled><</button>
+                <div id="pageNumbers" class="page-numbers"></div>
+                <button id="nextButton" class="pagination-button">></button>
+            </div> 
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-subscribe">
+            <h2>Subscribe to our newsletter</h2>
+            <p>Get daily news on upcoming offers from suppliers all over the world.</p>
+            <div class="contact-email">
+                <div class="email-symbol">
+                    <img src="assets/icons/f01 - email.svg" alt="Email icon" />
+                    <input type="email" class="email-input" placeholder="Email" aria-label="Email address" required />
+                </div>
+                <button onclick="subscribe()" class="sub-btn">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-container">
+            <p>&copy; 2023 ECommerce.</p>
+            <div class="language-selector-container">
+                <div class="language-selector" id="languageSelector">
+                    <div class="selected-language">
+                        <img src="./assets/icons/GB@2x.png" class="flag" alt="English Flag">
+                        <span id="selectedLanguage">English</span>
+                        <div class="language-arrow">
+                            <img src="./assets/icons/f02 - arrow.svg" class="lang-arrow" alt="Language Selector Arrow"> 
+                        </div>
+                    </div>
+                    <div class="options" id="languageOptions">
+                        <div class="option" data-value="en">
+                            <img src="./assets/icons/GB@2x.png" class="flag" alt="English Flag"> English
+                        </div>
+                        <div class="option" data-value="fr">
+                            <img src="./assets/icons/FR@2x.png" class="flag" alt="French Flag"> French
+                        </div>
+                        <div class="option" data-value="de">
+                            <img src="./assets/icons/DE@2x.png" class="flag" alt="German Flag"> German
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
